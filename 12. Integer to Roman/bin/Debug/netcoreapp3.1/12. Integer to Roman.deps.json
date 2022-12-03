@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "12. Integer to Roman/1.0.0": {
+        "dependencies": {
+          "LeetCode": "1.0.0"
+        },
+        "runtime": {
+          "12. Integer to Roman.dll": {}
+        }
+      },
+      "LeetCode/1.0.0": {
+        "runtime": {
+          "LeetCode.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "12. Integer to Roman/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LeetCode/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
