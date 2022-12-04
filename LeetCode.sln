@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "13. Roman to Integer", "13.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12. Integer to Roman", "12. Integer to Roman\12. Integer to Roman.csproj", "{655C01C6-DD94-48EB-B0B0-EA5279F0BF62}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "273. Integer to English Words", "273. Integer to English Words\273. Integer to English Words.csproj", "{335F76E7-64DE-4963-A87D-3ABD82D2B576}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{655C01C6-DD94-48EB-B0B0-EA5279F0BF62}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{655C01C6-DD94-48EB-B0B0-EA5279F0BF62}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{655C01C6-DD94-48EB-B0B0-EA5279F0BF62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{335F76E7-64DE-4963-A87D-3ABD82D2B576}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{335F76E7-64DE-4963-A87D-3ABD82D2B576}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{335F76E7-64DE-4963-A87D-3ABD82D2B576}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{335F76E7-64DE-4963-A87D-3ABD82D2B576}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
