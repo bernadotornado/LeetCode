@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using LeetCode;
 
@@ -8,9 +9,7 @@ namespace _273._Integer_to_English_Words
 {
     class Solution
     {
-        public static string NumberToWords(int num)
-        {
-            List<KeyValuePair<int, string>> table = new List<KeyValuePair<int, string>>()
+        static List<KeyValuePair<int, string>> table = new List<KeyValuePair<int, string>>()
             {
                 new KeyValuePair<int, string>(1_000_000_000, "Billion"),
                 new KeyValuePair<int, string>(1_000_000,  "Million" ),
@@ -44,72 +43,57 @@ namespace _273._Integer_to_English_Words
                 new KeyValuePair<int, string>(2,    "Two" ),
                 new KeyValuePair<int, string>(1,    "One" ),
             };
-
-            int n = num;
+        static Dictionary<string, int> CategorizeIntsToNumericalUnits(int n)
+        {
+            var keys = new Dictionary<string, int>();
+            while (n > 0)
+                foreach (var item in table)
+                    if (n >= item.Key)
+                    {
+                        n -= item.Key;
+                        if (!keys.ContainsKey(item.Value))
+                            keys.Add(item.Value, 0);
+                        keys[item.Value]++;
+                        break;
+                    }
+            return keys;
+        }
+        static string DictToString(Dictionary<string,int> dict)
+        {
+            string s = "";
+            foreach (var line in table)
+                if (dict.ContainsKey(line.Value))
+                {
+                    if (line.Key >= 100)
+                        s+= dict[line.Value] < 20 ? 
+                            $"{DictToString(CategorizeIntsToNumericalUnits(dict[line.Value]))}":
+                            $"{dict[line.Value]} ";
+                    s += $"{line.Value} ";
+                }
+            return s;
+        }
+        
+        public static string NumberToWords(int num)
+        {
             string res = "";
-
-            Dictionary<string, int> IntToNumericalUnits(int _n)
-            {
-                var _keys = new Dictionary<string, int>();
-                while (_n > 0)
-                {
-                    foreach (var item in table)
-                    {
-                        if (_n >= item.Key)
-                        {
-                            _n -= item.Key;
-                            if (!_keys.ContainsKey(item.Value))
-                            {
-                                _keys.Add(item.Value, 0);
-                            }
-                            _keys[item.Value]++;
-                            break;
-                        }
-                    }
-                }
-                return _keys;
-            }
-           
-            string DictToString(Dictionary<string,int> dict)
-            {
-                string s = "";
-                foreach (var line in table)
-                {
-                    if (dict.ContainsKey(line.Value))
-                    {
-                        if (line.Key >= 100)
-                        {
-                            s+= dict[line.Value] < 20 ? 
-                                $"{DictToString(IntToNumericalUnits(dict[line.Value]))}":
-                                $"{dict[line.Value]} ";
-                        }
-
-                        s += $"{line.Value} ";
-                    }
-                }
-                return s;
-            }
-            var firstIteration=  IntToNumericalUnits(n);
-
+            var firstIteration=  CategorizeIntsToNumericalUnits(num);
             string firstIterationAsString = DictToString(firstIteration);
             var words = firstIterationAsString.Split(" ");
             
             foreach (var word in words)
             {
                 bool b = int.TryParse(word, out int parsedNum);
-                res += b ? DictToString(IntToNumericalUnits(parsedNum)) : word + " ";
+                res += b ? DictToString(CategorizeIntsToNumericalUnits(parsedNum)) : word + " ";
             }
-            
+
             return num == 0 ? "Zero" : res.TrimEnd();
         }
+        
         static void Main(string[] args)
         {
             Common.StartBenchmark();
-
-            Console.WriteLine(NumberToWords(12345678));
-
+            Console.WriteLine(NumberToWords(1341234));
             Common.EndBenchmark();
-
         }
     }
 }
