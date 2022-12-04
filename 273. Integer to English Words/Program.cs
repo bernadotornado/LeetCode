@@ -61,8 +61,39 @@ namespace _273._Integer_to_English_Words
                     }
                 }
             }
+
+            foreach (var j in table)
+            {
+                try
+                {
+
+                    int numnum = keys[j.Value];
+                    string s = "";
+                    while (numnum > 0)
+                    {
+                        foreach (var item in table)
+                        {
+                            if (numnum >= item.Key)
+                            {
+                                numnum -= item.Key;
+                                // if(item.Value == "One")
+                                //     break;
+                                s += item.Value ;
+                                break;
+                            }
+                        }
+                    }
+
+                    
+                    
+                        res += $"{s} {j.Value} ";
+                }
+                catch
+                {
+                    
+                }
+            }
             
-           Console.WriteLine("sdf");
             
             return res;
         }
@@ -70,7 +101,7 @@ namespace _273._Integer_to_English_Words
         {
             Common.StartBenchmark();
 
-            Console.WriteLine(NumberToWords(14123489));
+            Console.WriteLine(NumberToWords(1234123499));
 
             Common.EndBenchmark();
 
