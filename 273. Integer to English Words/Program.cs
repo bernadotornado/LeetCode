@@ -51,7 +51,7 @@ namespace _273._Integer_to_English_Words
 
             List<Dictionary<string, int>> ledger = new List<Dictionary<string, int>>();
 
-            void IntToNumericalUnits(int _n)
+            Dictionary<string, int> IntToNumericalUnits(int _n)
             {
                 var _keys = new Dictionary<string, int>();
                 while (_n > 0)
@@ -73,7 +73,9 @@ namespace _273._Integer_to_English_Words
                                                     
                        
                     }
-                } ledger.Add(_keys);
+                }
+
+                return _keys;
             }
 
             
@@ -124,12 +126,26 @@ namespace _273._Integer_to_English_Words
 
                 return s;
             }
-            IntToNumericalUnits(n);
+            var xxx=  IntToNumericalUnits(n);
 
-            string __s = DictToString(ledger[0]);
+            string __s = DictToString(xxx);
+            var abcd = __s.Split(" ");
+            string jzaber = "";
+            foreach (var word in abcd)
+            {
+                if (int.TryParse(word, out int numbum))
+                {
+                    jzaber +=
+                        DictToString(IntToNumericalUnits(numbum));
+                }
+                else
+                {
+                    jzaber += word+" ";
+                }
+            }
             
             res += $"\n{__s} ";
-            return res;
+            return jzaber;
         }
         static void Main(string[] args)
         {
