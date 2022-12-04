@@ -62,7 +62,6 @@ namespace _273._Integer_to_English_Words
                             {
                                 _keys.Add(item.Value, 0);
                             }
-
                             _keys[item.Value]++;
                             break;
                         }
@@ -70,8 +69,6 @@ namespace _273._Integer_to_English_Words
                 }
                 return _keys;
             }
-
-            
            
             string DictToString(Dictionary<string,int> dict)
             {
@@ -80,43 +77,16 @@ namespace _273._Integer_to_English_Words
                 {
                     if (dict.ContainsKey(line.Value))
                     {
-                        if (line.Key < 100)
+                        if (line.Key >= 100)
                         {
-                            s+= $"{line.Value} ";
+                            s+= dict[line.Value] < 20 ? 
+                                $"{DictToString(IntToNumericalUnits(dict[line.Value]))}":
+                                $"{dict[line.Value]} ";
                         }
-                        else
-                        {
-                            if (dict[line.Value] < 20)
-                            {
-                                s += dict[line.Value] switch
-                                {
-                                    19 =>  "Nineteen" ,
-                                    18 =>  "Eighteen" ,
-                                    17 =>  "Seventeen" ,
-                                    16 =>  "Sixteen" ,
-                                    15 =>  "Fifteen" ,
-                                    14 =>  "Fourteen" ,
-                                    12 => "Twelve",
-                                    11 => "Eleven",
-                                    10 => "Ten",
-                                    9 => "Nine",
-                                    8 => "Eight",
-                                    7 => "Seven",
-                                    6 => "Six",
-                                    5 => "Five",
-                                    4 => "Four",
-                                    3 => "Three",
-                                    2 => "Two",
-                                    1 => "One",
-                                };
-                                s += $" {line.Value} ";
-                            }
-                            else
-                            s += $"{dict[line.Value]} {line.Value} ";
-                        }
+
+                        s += $"{line.Value} ";
                     }
                 }
-
                 return s;
             }
             var firstIteration=  IntToNumericalUnits(n);
@@ -126,15 +96,8 @@ namespace _273._Integer_to_English_Words
             
             foreach (var word in words)
             {
-                if (int.TryParse(word, out int parsedNum))
-                {
-                    res +=
-                        DictToString(IntToNumericalUnits(parsedNum));
-                }
-                else
-                {
-                    res += word+ " ";
-                }
+                bool b = int.TryParse(word, out int parsedNum);
+                res += b ? DictToString(IntToNumericalUnits(parsedNum)) : word + " ";
             }
             
             return num == 0 ? "Zero" : res.TrimEnd();
@@ -143,7 +106,7 @@ namespace _273._Integer_to_English_Words
         {
             Common.StartBenchmark();
 
-            Console.WriteLine(NumberToWords(0));
+            Console.WriteLine(NumberToWords(12345678));
 
             Common.EndBenchmark();
 
