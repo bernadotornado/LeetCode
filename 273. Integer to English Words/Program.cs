@@ -137,13 +137,13 @@ namespace _273._Integer_to_English_Words
                 }
             }
             
-            return res.TrimEnd();
+            return num == 0 ? "Zero" : res.TrimEnd();
         }
         static void Main(string[] args)
         {
             Common.StartBenchmark();
 
-            Console.WriteLine(NumberToWords(1234123499));
+            Console.WriteLine(NumberToWords(0));
 
             Common.EndBenchmark();
 
