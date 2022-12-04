@@ -80,9 +80,14 @@ namespace _273._Integer_to_English_Words
                 }
             }
 
-            int index = 1;
+            int index = 0;
             foreach (var line in table)
             {
+                index++;
+                if (index > ledger.Count )
+                {
+                    break;
+                }
                 if (l.ContainsKey(line.Value))
                 {
                     string s = "";
@@ -97,10 +102,10 @@ namespace _273._Integer_to_English_Words
                     res += $"{s}{line.Value} ";
                 }
 
-                index++;
+                
             }
             
-            res += $"{ledger} ";
+            res += $"\n{ledger} ";
             return res;
         }
         static void Main(string[] args)
