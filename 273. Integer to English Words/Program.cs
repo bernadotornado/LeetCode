@@ -74,12 +74,32 @@ namespace _273._Integer_to_English_Words
             var l = ledger[0];
             foreach (var line in table)
             {
-
                 if (l.ContainsKey(line.Value))
                 {
                     IntToNumericalUnits(l[line.Value]);
                 }
             }
+
+            int index = 1;
+            foreach (var line in table)
+            {
+                if (l.ContainsKey(line.Value))
+                {
+                    string s = "";
+                    foreach (var line2 in table)
+                    {
+                        if (ledger[index].ContainsKey(line2.Value))
+                        {
+                            s += $"{line2.Value} ";
+                        }
+                    }
+
+                    res += $"{s}{line.Value} ";
+                }
+
+                index++;
+            }
+            
             res += $"{ledger} ";
             return res;
         }
