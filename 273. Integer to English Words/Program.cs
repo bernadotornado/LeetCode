@@ -43,24 +43,32 @@ namespace _273._Integer_to_English_Words
 
             Dictionary<string,int> keys = new Dictionary<string,int> ();
 
-            while (n > 0)
+            List<Dictionary<string, int>> thing = new List<Dictionary<string, int>>();
+
+            void IntToNumericalUnits(int _n, Dictionary<string,int> _keys)
             {
-                foreach (var item in table)
+                while (_n > 0)
                 {
-                    if (n >= item.Key)
+                    foreach (var item in table)
                     {
-                        n -= item.Key;
-                        if (!keys.ContainsKey(item.Value))
+                        if (_n >= item.Key)
                         {
-                            keys.Add(item.Value, 0);
+                            _n -= item.Key;
+                            if (!_keys.ContainsKey(item.Value))
+                            {
+                                _keys.Add(item.Value, 0);
+                            }
+
+                            _keys[item.Value]++;
+
+                            // res += item.Value+ " ";
+                            break;
                         }
-                        keys[item.Value]++;
-                        
-                       // res += item.Value+ " ";
-                        break;
                     }
-                }
+                } thing.Add(_keys);
             }
+
+            IntToNumericalUnits(n, keys);
 
             foreach (var j in table)
             {
@@ -69,20 +77,22 @@ namespace _273._Integer_to_English_Words
 
                     int numnum = keys[j.Value];
                     string s = "";
-                    while (numnum > 0)
-                    {
-                        foreach (var item in table)
-                        {
-                            if (numnum >= item.Key)
-                            {
-                                numnum -= item.Key;
-                                // if(item.Value == "One")
-                                //     break;
-                                s += item.Value ;
-                                break;
-                            }
-                        }
-                    }
+                    // while (numnum > 0)
+                    // {
+                    //     foreach (var item in table)
+                    //     {
+                    //         if (numnum >= item.Key)
+                    //         {
+                    //             numnum -= item.Key;
+                    //             // if(item.Value == "One")
+                    //             //     break;
+                    //             s += item.Value ;
+                    //             break;
+                    //         }
+                    //     }
+                    // }
+                    Dictionary<string, int> keys2 = new Dictionary<string, int>();
+                    IntToNumericalUnits(numnum, keys2);
 
                     
                     
