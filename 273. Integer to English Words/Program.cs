@@ -41,12 +41,13 @@ namespace _273._Integer_to_English_Words
             int n = num;
             string res = "";
 
-            Dictionary<string,int> keys = new Dictionary<string,int> ();
+           // Dictionary<string,int> keys = new Dictionary<string,int> ();
 
-            List<Dictionary<string, int>> thing = new List<Dictionary<string, int>>();
+            List<Dictionary<string, int>> ledger = new List<Dictionary<string, int>>();
 
-            void IntToNumericalUnits(int _n, Dictionary<string,int> _keys)
+            void IntToNumericalUnits(int _n)
             {
+                var _keys = new Dictionary<string, int>();
                 while (_n > 0)
                 {
                     foreach (var item in table)
@@ -60,51 +61,26 @@ namespace _273._Integer_to_English_Words
                             }
 
                             _keys[item.Value]++;
-
                             // res += item.Value+ " ";
                             break;
                         }
+                                                    
+                       
                     }
-                } thing.Add(_keys);
+                } ledger.Add(_keys);
             }
 
-            IntToNumericalUnits(n, keys);
-
-            foreach (var j in table)
+            IntToNumericalUnits(n);
+            var l = ledger[0];
+            foreach (var line in table)
             {
-                try
-                {
 
-                    int numnum = keys[j.Value];
-                    string s = "";
-                    // while (numnum > 0)
-                    // {
-                    //     foreach (var item in table)
-                    //     {
-                    //         if (numnum >= item.Key)
-                    //         {
-                    //             numnum -= item.Key;
-                    //             // if(item.Value == "One")
-                    //             //     break;
-                    //             s += item.Value ;
-                    //             break;
-                    //         }
-                    //     }
-                    // }
-                    Dictionary<string, int> keys2 = new Dictionary<string, int>();
-                    IntToNumericalUnits(numnum, keys2);
-
-                    
-                    
-                        res += $"{s} {j.Value} ";
-                }
-                catch
+                if (l.ContainsKey(line.Value))
                 {
-                    
+                    IntToNumericalUnits(l[line.Value]);
                 }
             }
-            
-            
+            res += $"{ledger} ";
             return res;
         }
         static void Main(string[] args)
