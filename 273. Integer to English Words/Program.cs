@@ -48,9 +48,6 @@ namespace _273._Integer_to_English_Words
             int n = num;
             string res = "";
 
-
-            List<Dictionary<string, int>> ledger = new List<Dictionary<string, int>>();
-
             Dictionary<string, int> IntToNumericalUnits(int _n)
             {
                 var _keys = new Dictionary<string, int>();
@@ -67,14 +64,10 @@ namespace _273._Integer_to_English_Words
                             }
 
                             _keys[item.Value]++;
-                            // res += item.Value+ " ";
                             break;
                         }
-                                                    
-                       
                     }
                 }
-
                 return _keys;
             }
 
@@ -126,26 +119,25 @@ namespace _273._Integer_to_English_Words
 
                 return s;
             }
-            var xxx=  IntToNumericalUnits(n);
+            var firstIteration=  IntToNumericalUnits(n);
 
-            string __s = DictToString(xxx);
-            var abcd = __s.Split(" ");
-            string jzaber = "";
-            foreach (var word in abcd)
+            string firstIterationAsString = DictToString(firstIteration);
+            var words = firstIterationAsString.Split(" ");
+            
+            foreach (var word in words)
             {
-                if (int.TryParse(word, out int numbum))
+                if (int.TryParse(word, out int parsedNum))
                 {
-                    jzaber +=
-                        DictToString(IntToNumericalUnits(numbum));
+                    res +=
+                        DictToString(IntToNumericalUnits(parsedNum));
                 }
                 else
                 {
-                    jzaber += word+" ";
+                    res += word+ " ";
                 }
             }
             
-            res += $"\n{__s} ";
-            return jzaber.TrimEnd();
+            return res.TrimEnd();
         }
         static void Main(string[] args)
         {
