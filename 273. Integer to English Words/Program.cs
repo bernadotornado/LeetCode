@@ -24,6 +24,13 @@ namespace _273._Integer_to_English_Words
                 new KeyValuePair<int, string>(40,   "Forty" ),
                 new KeyValuePair<int, string>(30,   "Thirty" ),
                 new KeyValuePair<int, string>(20,   "Twenty"),
+                new KeyValuePair<int, string>(19,   "Nineteen" ),
+                new KeyValuePair<int, string>(18,   "Eighteen" ),
+                new KeyValuePair<int, string>(17,   "Seventeen" ),
+                new KeyValuePair<int, string>(16,   "Sixteen" ),
+                new KeyValuePair<int, string>(15,   "Fifteen" ),
+                new KeyValuePair<int, string>(14,   "Fourteen" ),
+                new KeyValuePair<int, string>(13,   "Thirteen" ),
                 new KeyValuePair<int, string>(12,   "Twelve" ),
                 new KeyValuePair<int, string>(11,   "Eleven" ),
                 new KeyValuePair<int, string>(10,   "Ten" ),
@@ -41,7 +48,6 @@ namespace _273._Integer_to_English_Words
             int n = num;
             string res = "";
 
-           // Dictionary<string,int> keys = new Dictionary<string,int> ();
 
             List<Dictionary<string, int>> ledger = new List<Dictionary<string, int>>();
 
@@ -70,40 +76,8 @@ namespace _273._Integer_to_English_Words
                 } ledger.Add(_keys);
             }
 
-            IntToNumericalUnits(n);
-            // var l = ledger[0];
-            // foreach (var line in table)
-            // {
-            //     if (l.ContainsKey(line.Value))
-            //     {
-            //         IntToNumericalUnits(l[line.Value]);
-            //     }
-            // }
-            //
-            // int index = 0;
-            // foreach (var line in table)
-            // {
-            //     index++;
-            //     if (index > ledger.Count )
-            //     {
-            //         break;
-            //     }
-            //     if (l.ContainsKey(line.Value))
-            //     {
-            //         string s = "";
-            //         foreach (var line2 in table)
-            //         {
-            //             if (ledger[index].ContainsKey(line2.Value))
-            //             {
-            //                 s += $"{line2.Value} ";
-            //             }
-            //         }
-            //
-            //         res += $"{s}{line.Value} ";
-            //     }
-            //
-            //     
-            // }
+            
+           
             string DictToString(Dictionary<string,int> dict)
             {
                 string s = "";
@@ -117,10 +91,16 @@ namespace _273._Integer_to_English_Words
                         }
                         else
                         {
-                            if (dict[line.Value] < 13)
+                            if (dict[line.Value] < 20)
                             {
                                 s += dict[line.Value] switch
                                 {
+                                    19 =>  "Nineteen" ,
+                                    18 =>  "Eighteen" ,
+                                    17 =>  "Seventeen" ,
+                                    16 =>  "Sixteen" ,
+                                    15 =>  "Fifteen" ,
+                                    14 =>  "Fourteen" ,
                                     12 => "Twelve",
                                     11 => "Eleven",
                                     10 => "Ten",
@@ -144,6 +124,7 @@ namespace _273._Integer_to_English_Words
 
                 return s;
             }
+            IntToNumericalUnits(n);
 
             string __s = DictToString(ledger[0]);
             
