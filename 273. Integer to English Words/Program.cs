@@ -145,7 +145,7 @@ namespace _273._Integer_to_English_Words
             }
             
             res += $"\n{__s} ";
-            return jzaber;
+            return jzaber.TrimEnd();
         }
         static void Main(string[] args)
         {
