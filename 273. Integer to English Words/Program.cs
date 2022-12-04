@@ -71,41 +71,83 @@ namespace _273._Integer_to_English_Words
             }
 
             IntToNumericalUnits(n);
-            var l = ledger[0];
-            foreach (var line in table)
+            // var l = ledger[0];
+            // foreach (var line in table)
+            // {
+            //     if (l.ContainsKey(line.Value))
+            //     {
+            //         IntToNumericalUnits(l[line.Value]);
+            //     }
+            // }
+            //
+            // int index = 0;
+            // foreach (var line in table)
+            // {
+            //     index++;
+            //     if (index > ledger.Count )
+            //     {
+            //         break;
+            //     }
+            //     if (l.ContainsKey(line.Value))
+            //     {
+            //         string s = "";
+            //         foreach (var line2 in table)
+            //         {
+            //             if (ledger[index].ContainsKey(line2.Value))
+            //             {
+            //                 s += $"{line2.Value} ";
+            //             }
+            //         }
+            //
+            //         res += $"{s}{line.Value} ";
+            //     }
+            //
+            //     
+            // }
+            string DictToString(Dictionary<string,int> dict)
             {
-                if (l.ContainsKey(line.Value))
+                string s = "";
+                foreach (var line in table)
                 {
-                    IntToNumericalUnits(l[line.Value]);
-                }
-            }
-
-            int index = 0;
-            foreach (var line in table)
-            {
-                index++;
-                if (index > ledger.Count )
-                {
-                    break;
-                }
-                if (l.ContainsKey(line.Value))
-                {
-                    string s = "";
-                    foreach (var line2 in table)
+                    if (dict.ContainsKey(line.Value))
                     {
-                        if (ledger[index].ContainsKey(line2.Value))
+                        if (line.Key < 100)
                         {
-                            s += $"{line2.Value} ";
+                            s+= $"{line.Value} ";
+                        }
+                        else
+                        {
+                            if (dict[line.Value] < 13)
+                            {
+                                s += dict[line.Value] switch
+                                {
+                                    12 => "Twelve",
+                                    11 => "Eleven",
+                                    10 => "Ten",
+                                    9 => "Nine",
+                                    8 => "Eight",
+                                    7 => "Seven",
+                                    6 => "Six",
+                                    5 => "Five",
+                                    4 => "Four",
+                                    3 => "Three",
+                                    2 => "Two",
+                                    1 => "One",
+                                };
+                                s += $" {line.Value} ";
+                            }
+                            else
+                            s += $"{dict[line.Value]} {line.Value} ";
                         }
                     }
-
-                    res += $"{s}{line.Value} ";
                 }
 
-                
+                return s;
             }
+
+            string __s = DictToString(ledger[0]);
             
-            res += $"\n{ledger} ";
+            res += $"\n{__s} ";
             return res;
         }
         static void Main(string[] args)
