@@ -91,9 +91,7 @@ namespace _273._Integer_to_English_Words
         
         static void Main(string[] args)
         {
-            Common.StartBenchmark();
-            Console.WriteLine(NumberToWords(1341234));
-            Common.EndBenchmark();
+            Common.Run(typeof(Solution), NumberToWords, 0);
         }
     }
 }

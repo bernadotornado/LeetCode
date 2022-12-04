@@ -43,12 +43,7 @@ namespace _12._Integer_to_Roman
         }
         static void Main(string[] args)
         {
-            Common.StartBenchmark();
-
-            Console.WriteLine(IntToRoman(1234));
-
-            Common.EndBenchmark();
-
+            Common.Run(typeof(Solution), IntToRoman, 1234);
         }
     }
 }

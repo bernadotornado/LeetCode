@@ -30,12 +30,8 @@ namespace _13._Roman_to_Integer
         }
         static void Main(string[] args)
         {
-            Common.StartBenchmark();
-
-            Console.WriteLine(RomanToInt("MDCCCXLIX"));
             
-            Common.EndBenchmark();
-
+            Common.Run(typeof(Solution),RomanToInt, "MDCCCXLIX");
         }
     }
 }

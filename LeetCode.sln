@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32901.82
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCode", "LeetCode\LeetCode.csproj", "{4B41CEDD-0AF4-4146-9697-AE89EF827B87}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeetCode", "LeetCode\LeetCode.csproj", "{4B41CEDD-0AF4-4146-9697-AE89EF827B87}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "13. Roman to Integer", "13. Roman to Integer\13. Roman to Integer.csproj", "{B5015196-B6CC-4563-870D-27D3A5033ABF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "13. Roman to Integer", "13. Roman to Integer\13. Roman to Integer.csproj", "{B5015196-B6CC-4563-870D-27D3A5033ABF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12. Integer to Roman", "12. Integer to Roman\12. Integer to Roman.csproj", "{655C01C6-DD94-48EB-B0B0-EA5279F0BF62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "12. Integer to Roman", "12. Integer to Roman\12. Integer to Roman.csproj", "{655C01C6-DD94-48EB-B0B0-EA5279F0BF62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "273. Integer to English Words", "273. Integer to English Words\273. Integer to English Words.csproj", "{335F76E7-64DE-4963-A87D-3ABD82D2B576}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "273. Integer to English Words", "273. Integer to English Words\273. Integer to English Words.csproj", "{335F76E7-64DE-4963-A87D-3ABD82D2B576}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1967. Number of Strings That Appear as Substrings in Word", "1967. Number of Strings That Appear as Substrings in Word\1967. Number of Strings That Appear as Substrings in Word.csproj", "{7E066DBB-B51D-44DD-BDB7-95146E1250DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{335F76E7-64DE-4963-A87D-3ABD82D2B576}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{335F76E7-64DE-4963-A87D-3ABD82D2B576}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{335F76E7-64DE-4963-A87D-3ABD82D2B576}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E066DBB-B51D-44DD-BDB7-95146E1250DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E066DBB-B51D-44DD-BDB7-95146E1250DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E066DBB-B51D-44DD-BDB7-95146E1250DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E066DBB-B51D-44DD-BDB7-95146E1250DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
