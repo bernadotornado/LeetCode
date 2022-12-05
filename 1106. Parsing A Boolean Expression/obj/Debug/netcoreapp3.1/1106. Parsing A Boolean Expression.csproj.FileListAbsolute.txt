@@ -1,0 +1,21 @@
+C:\Users\bszha\Spengergasse\LeetCode\LeetCode\1106. Parsing A Boolean Expression\bin\Debug\netcoreapp3.1\LeetCode.deps.json
+C:\Users\bszha\Spengergasse\LeetCode\LeetCode\1106. Parsing A Boolean Expression\bin\Debug\netcoreapp3.1\LeetCode.runtimeconfig.json
+C:\Users\bszha\Spengergasse\LeetCode\LeetCode\1106. Parsing A Boolean Expression\bin\Debug\netcoreapp3.1\LeetCode.runtimeconfig.dev.json
+C:\Users\bszha\Spengergasse\LeetCode\LeetCode\1106. Parsing A Boolean Expression\bin\Debug\netcoreapp3.1\LeetCode.exe
+C:\Users\bszha\Spengergasse\LeetCode\LeetCode\1106. Parsing A Boolean Expression\bin\Debug\netcoreapp3.1\1106. Parsing A Boolean Expression.exe
+C:\Users\bszha\Spengergasse\LeetCode\LeetCode\1106. Parsing A Boolean Expression\bin\Debug\netcoreapp3.1\1106. Parsing A Boolean Expression.deps.json
+C:\Users\bszha\Spengergasse\LeetCode\LeetCode\1106. Parsing A Boolean Expression\bin\Debug\netcoreapp3.1\1106. Parsing A Boolean Expression.runtimeconfig.json
+C:\Users\bszha\Spengergasse\LeetCode\LeetCode\1106. Parsing A Boolean Expression\bin\Debug\netcoreapp3.1\1106. Parsing A Boolean Expression.runtimeconfig.dev.json
+C:\Users\bszha\Spengergasse\LeetCode\LeetCode\1106. Parsing A Boolean Expression\bin\Debug\netcoreapp3.1\1106. Parsing A Boolean Expression.dll
+C:\Users\bszha\Spengergasse\LeetCode\LeetCode\1106. Parsing A Boolean Expression\bin\Debug\netcoreapp3.1\1106. Parsing A Boolean Expression.pdb
+C:\Users\bszha\Spengergasse\LeetCode\LeetCode\1106. Parsing A Boolean Expression\bin\Debug\netcoreapp3.1\LeetCode.dll
+C:\Users\bszha\Spengergasse\LeetCode\LeetCode\1106. Parsing A Boolean Expression\bin\Debug\netcoreapp3.1\LeetCode.pdb
+C:\Users\bszha\Spengergasse\LeetCode\LeetCode\1106. Parsing A Boolean Expression\obj\Debug\netcoreapp3.1\1106. Parsing A Boolean Expression.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bszha\Spengergasse\LeetCode\LeetCode\1106. Parsing A Boolean Expression\obj\Debug\netcoreapp3.1\1106. Parsing A Boolean Expression.AssemblyInfoInputs.cache
+C:\Users\bszha\Spengergasse\LeetCode\LeetCode\1106. Parsing A Boolean Expression\obj\Debug\netcoreapp3.1\1106. Parsing A Boolean Expression.AssemblyInfo.cs
+C:\Users\bszha\Spengergasse\LeetCode\LeetCode\1106. Parsing A Boolean Expression\obj\Debug\netcoreapp3.1\1106. Parsing A Boolean Expression.csproj.CoreCompileInputs.cache
+C:\Users\bszha\Spengergasse\LeetCode\LeetCode\1106. Parsing A Boolean Expression\obj\Debug\netcoreapp3.1\1106. Parsing A Boolean Expression.csproj.CopyComplete
+C:\Users\bszha\Spengergasse\LeetCode\LeetCode\1106. Parsing A Boolean Expression\obj\Debug\netcoreapp3.1\1106. Parsing A Boolean Expression.dll
+C:\Users\bszha\Spengergasse\LeetCode\LeetCode\1106. Parsing A Boolean Expression\obj\Debug\netcoreapp3.1\1106. Parsing A Boolean Expression.pdb
+C:\Users\bszha\Spengergasse\LeetCode\LeetCode\1106. Parsing A Boolean Expression\obj\Debug\netcoreapp3.1\1106. Parsing A Boolean Expression.genruntimeconfig.cache
+C:\Users\bszha\Spengergasse\LeetCode\LeetCode\1106. Parsing A Boolean Expression\obj\Debug\netcoreapp3.1\1106. Parsing A Boolean Expression.csproj.AssemblyReference.cache
