@@ -110,7 +110,8 @@ namespace _1106._Parsing_A_Boolean_Expression
 
         static void Main(string[] args)
         {
-            Common.Run(typeof(Solution), ParseBoolExpr,"&(|(f))");
+            Common.Run(typeof(Solution), ParseBoolExpr,"|(&(t,f,t),!(t))");
+            //TODO:                     Denkt, dass zwischen dem ^ und dem  ^ die Subexpression ist, obwohl die beiden einzelne subexpressions sind. 
         }
     }
 }
