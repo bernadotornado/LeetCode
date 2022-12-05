@@ -39,7 +39,7 @@ namespace _1106._Parsing_A_Boolean_Expression
             var bools = f.Split(_comma);
             bool res = EvalBool(bools[0][0]);
             if (s[0] == _not)
-                return (!res).ToString();
+                return EvalBool(res? _false:_true).ToString();
             
             for (int i = 1; i < bools.Length; i++)
             {
@@ -58,16 +58,26 @@ namespace _1106._Parsing_A_Boolean_Expression
         }
         public static bool ParseBoolExpr(string expression)
         {
-            var next = ""; 
-            if (expression.Length > 1)
+            var next = expression;
+            var last = expression;
+            while (next.Length > 1)
             {
-                    next = GetNextIteration(expression);
-                    var nexter = GetNextIteration(next);
-                    Console.WriteLine("nexter: "+ nexter); 
+                Console.WriteLine($"last: {last}, next: {next}");
+                next = GetNextIteration(last);
+                last = next;
+                // var nexter = GetNextIteration(next);
+                // Console.WriteLine("nexter: "+ nexter); 
             }
+            Console.WriteLine($"last: {last}, next: {next}");
             
-    
-            else return EvalBool(expression[0]);
+            // if (expression.Length > 1)
+            // {
+            //         
+            // }
+            //
+            //
+            // else 
+                return EvalBool(last[0]);
 
             return false;
         }
@@ -79,13 +89,16 @@ namespace _1106._Parsing_A_Boolean_Expression
             var firstClosedPar = 0;
             string subExpression = "";
             string evalExpression = "";
-
-            GetSubExpressionParentheses(symbols, ref lastOpenPar, ref firstClosedPar);
-            subExpression = SubExpression(lastOpenPar, firstClosedPar, symbols);
-            evalExpression = EvaluateSubExpression(subExpression);
-            //Console.WriteLine("SubExpressionValue: " + evalExpression);
-            string next = expression.Substring(0, lastOpenPar - 1) + evalExpression + expression.Substring(firstClosedPar + 1);
-            //Console.WriteLine("Next expr: " + next);
+            string next = "";
+            
+                GetSubExpressionParentheses(symbols, ref lastOpenPar, ref firstClosedPar);
+                subExpression = SubExpression(lastOpenPar, firstClosedPar, symbols);
+                evalExpression = EvaluateSubExpression(subExpression);
+                //Console.WriteLine("SubExpressionValue: " + evalExpression);
+                next = expression.Substring(0, lastOpenPar - 1) + evalExpression + expression.Substring(firstClosedPar + 1);
+                //Console.WriteLine("Next expr: " + next);
+            
+            
             return next;
         }
 
@@ -105,7 +118,14 @@ namespace _1106._Parsing_A_Boolean_Expression
             string subExpression = "";
             for (int i = lastOpenPar - 1; i <= firstClosedPar; i++)
             {
-                subExpression += symbols[i];
+                try
+                {
+                    subExpression += symbols[i];
+                }
+                catch 
+                {
+                
+                }
             }
 
             return subExpression;
@@ -113,7 +133,7 @@ namespace _1106._Parsing_A_Boolean_Expression
 
         static void Main(string[] args)
         {
-            Common.Run(typeof(Solution), ParseBoolExpr,"&(|(f,f,f,f,f),t)");
+            Common.Run(typeof(Solution), ParseBoolExpr,"!(&(f,t))");
         }
     }
 }
