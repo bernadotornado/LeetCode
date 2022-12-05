@@ -19,11 +19,6 @@ namespace _1106._Parsing_A_Boolean_Expression
         const char _parClosed = ')';
         const char _comma = ',';
 
-        static void AddChildrenToOperator(char _operator)
-        {
-
-        }
-
         public static bool EvalBool(char s)
         {
             switch (s)
@@ -39,7 +34,7 @@ namespace _1106._Parsing_A_Boolean_Expression
             var bools = f.Split(_comma);
             bool res = EvalBool(bools[0][0]);
             if (s[0] == _not)
-                return EvalBool(res? _false:_true).ToString();
+                return (res? _false:_true).ToString();
             
             for (int i = 1; i < bools.Length; i++)
             {
@@ -65,21 +60,10 @@ namespace _1106._Parsing_A_Boolean_Expression
                 Console.WriteLine($"last: {last}, next: {next}");
                 next = GetNextIteration(last);
                 last = next;
-                // var nexter = GetNextIteration(next);
-                // Console.WriteLine("nexter: "+ nexter); 
             }
             Console.WriteLine($"last: {last}, next: {next}");
-            
-            // if (expression.Length > 1)
-            // {
-            //         
-            // }
-            //
-            //
-            // else 
-                return EvalBool(last[0]);
-
-            return false;
+                
+            return EvalBool(last[0]);
         }
 
         private static string GetNextIteration(string expression)
@@ -117,15 +101,8 @@ namespace _1106._Parsing_A_Boolean_Expression
         {
             string subExpression = "";
             for (int i = lastOpenPar - 1; i <= firstClosedPar; i++)
-            {
-                try
-                {
-                    subExpression += symbols[i];
-                }
-                catch 
-                {
-                
-                }
+            { 
+                subExpression += symbols[i];
             }
 
             return subExpression;
@@ -133,7 +110,7 @@ namespace _1106._Parsing_A_Boolean_Expression
 
         static void Main(string[] args)
         {
-            Common.Run(typeof(Solution), ParseBoolExpr,"!(&(f,t))");
+            Common.Run(typeof(Solution), ParseBoolExpr,"&(|(f))");
         }
     }
 }
