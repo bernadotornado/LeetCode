@@ -58,25 +58,35 @@ namespace _1106._Parsing_A_Boolean_Expression
         }
         public static bool ParseBoolExpr(string expression)
         {
+            var next = ""; 
+            if (expression.Length > 1)
+            {
+                    next = GetNextIteration(expression);
+                    var nexter = GetNextIteration(next);
+                    Console.WriteLine("nexter: "+ nexter); 
+            }
+            
+    
+            else return EvalBool(expression[0]);
+
+            return false;
+        }
+
+        private static string GetNextIteration(string expression)
+        {
             var symbols = expression.ToCharArray();
             var lastOpenPar = 0;
             var firstClosedPar = 0;
             string subExpression = "";
             string evalExpression = "";
-            if (expression.Length > 1)
-            {
-                GetSubExpressionParentheses(symbols, ref lastOpenPar, ref firstClosedPar);
-                subExpression = SubExpression(lastOpenPar, firstClosedPar, symbols);
-                evalExpression = EvaluateSubExpression(subExpression);
-                Console.WriteLine("SubExpressionValue: "+evalExpression);
-                string next = expression.Substring(0, lastOpenPar) + evalExpression + expression.Substring(firstClosedPar);
-                Console.WriteLine("Next expr: " +next);
-            }
 
-
-            else return EvalBool(expression[0]);
-
-            return false;
+            GetSubExpressionParentheses(symbols, ref lastOpenPar, ref firstClosedPar);
+            subExpression = SubExpression(lastOpenPar, firstClosedPar, symbols);
+            evalExpression = EvaluateSubExpression(subExpression);
+            //Console.WriteLine("SubExpressionValue: " + evalExpression);
+            string next = expression.Substring(0, lastOpenPar - 1) + evalExpression + expression.Substring(firstClosedPar + 1);
+            //Console.WriteLine("Next expr: " + next);
+            return next;
         }
 
         private static void GetSubExpressionParentheses(char[] symbols, ref int lastOpenPar, ref int firstClosedPar)
@@ -103,7 +113,7 @@ namespace _1106._Parsing_A_Boolean_Expression
 
         static void Main(string[] args)
         {
-            Common.Run(typeof(Solution), ParseBoolExpr,"!(|(f,f,f,f,f))");
+            Common.Run(typeof(Solution), ParseBoolExpr,"&(|(f,f,f,f,f),t)");
         }
     }
 }
