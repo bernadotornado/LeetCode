@@ -35,7 +35,27 @@ namespace LeetCode
             EndBenchmark();
         }
 
+        public static string ArrayToString<T>(T[] arr)
+        {
+            string res = "";
+            for (int i = 0; i < arr.Length; i++)
+            {
+                res += arr[i].ToString();
+            }
+            return res;
+        }
         static public void Run<TInput1, TInput2, TOutput>(Type t, Solution<TInput1, TInput2, TOutput> solution, TInput1 input1, TInput2 input2)
+        {
+            GetTitle<TInput1, TInput2, TOutput>(t);
+            StartBenchmark();
+            Console.WriteLine("Inputs :");
+            Console.WriteLine($"{input1}, {input2}");
+            Console.WriteLine("\nOutput:");
+            Console.WriteLine($"{solution(input1, input2)}");
+            EndBenchmark();
+        }
+
+        private static void GetTitle<TInput1, TInput2, TOutput>(Type t)
         {
             string s = $"{t}";
             var a = s.Split('.', '_');
@@ -43,12 +63,6 @@ namespace LeetCode
             for (int i = 3; i < a.Length - 1; i++)
                 Console.Write($"{a[i]} ");
             Console.Write("\n");
-            StartBenchmark();
-            Console.WriteLine("Inputs :");
-            Console.WriteLine($"{input1}, {input2}");
-            Console.WriteLine("\nOutput:");
-            Console.WriteLine($"{solution(input1, input2)}");
-            EndBenchmark();
         }
 
         static void Main(string[] args)
