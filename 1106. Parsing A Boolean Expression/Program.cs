@@ -30,6 +30,8 @@ namespace _1106._Parsing_A_Boolean_Expression
         }
         public static string EvaluateSubExpression(string s)
         {
+            Console.WriteLine("Length: "+ s.Length);
+            Console.WriteLine("s: "+ s);
             string f = s.Substring(2, s.Length - 3);
             var bools = f.Split(_comma);
             bool res = EvalBool(bools[0][0]);
@@ -77,6 +79,8 @@ namespace _1106._Parsing_A_Boolean_Expression
             
                 GetSubExpressionParentheses(symbols, ref lastOpenPar, ref firstClosedPar);
                 subExpression = SubExpression(lastOpenPar, firstClosedPar, symbols);
+                Console.WriteLine("lastopen: "+lastOpenPar+", firstclosed: "+firstClosedPar);
+                Console.WriteLine("Subexpression: "+ subExpression);
                 evalExpression = EvaluateSubExpression(subExpression);
                 //Console.WriteLine("SubExpressionValue: " + evalExpression);
                 next = expression.Substring(0, lastOpenPar - 1) + evalExpression + expression.Substring(firstClosedPar + 1);
@@ -92,8 +96,22 @@ namespace _1106._Parsing_A_Boolean_Expression
             {
                 if (symbols[i] == _parOpen && i > lastOpenPar)
                     lastOpenPar = i;
-                if (symbols[i] == _parClosed && firstClosedPar == 0)
+                
+            }
+
+            for (int i = lastOpenPar; i < symbols.Length; i++)
+            {
+                if (symbols[i] == _parClosed && (firstClosedPar == 0))//|| firstClosedPar>lastOpenPar))
                     firstClosedPar = i;
+            }
+            
+
+            for (int i = lastOpenPar +1; i < firstClosedPar-1; i++)
+            {
+                if (symbols[i] == _parOpen || symbols[i] == _parClosed)
+                {
+                    Console.WriteLine("Alarm");
+                }
             }
         }
 
@@ -110,8 +128,13 @@ namespace _1106._Parsing_A_Boolean_Expression
 
         static void Main(string[] args)
         {
-            Common.Run(typeof(Solution), ParseBoolExpr,"|(&(t,f,t),!(t))");
+            
+                  Common.Run(typeof(Solution), ParseBoolExpr,"|(&(t,f,t),!(t))");
+          //        Common.Run(typeof(Solution), ParseBoolExpr,"|(&(t,f,t),!(t))");
             //TODO:                     Denkt, dass zwischen dem ^ und dem  ^ die Subexpression ist, obwohl die beiden einzelne subexpressions sind. 
+            
+            
+            //TODO: EINFACH BESSERER PARENTHESESE SETZ ALG
         }
     }
 }
