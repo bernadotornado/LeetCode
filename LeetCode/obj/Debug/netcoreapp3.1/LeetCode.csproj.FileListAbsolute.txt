@@ -12,3 +12,17 @@ C:\Users\bszha\Spengergasse\LeetCode\LeetCode\LeetCode\obj\Debug\netcoreapp3.1\L
 C:\Users\bszha\Spengergasse\LeetCode\LeetCode\LeetCode\obj\Debug\netcoreapp3.1\LeetCode.dll
 C:\Users\bszha\Spengergasse\LeetCode\LeetCode\LeetCode\obj\Debug\netcoreapp3.1\LeetCode.pdb
 C:\Users\bszha\Spengergasse\LeetCode\LeetCode\LeetCode\obj\Debug\netcoreapp3.1\LeetCode.genruntimeconfig.cache
+B:\Backup\SideProjects\LeetCode\LeetCode\bin\Debug\netcoreapp3.1\LeetCode.exe
+B:\Backup\SideProjects\LeetCode\LeetCode\bin\Debug\netcoreapp3.1\LeetCode.deps.json
+B:\Backup\SideProjects\LeetCode\LeetCode\bin\Debug\netcoreapp3.1\LeetCode.runtimeconfig.json
+B:\Backup\SideProjects\LeetCode\LeetCode\bin\Debug\netcoreapp3.1\LeetCode.runtimeconfig.dev.json
+B:\Backup\SideProjects\LeetCode\LeetCode\bin\Debug\netcoreapp3.1\LeetCode.dll
+B:\Backup\SideProjects\LeetCode\LeetCode\bin\Debug\netcoreapp3.1\LeetCode.pdb
+B:\Backup\SideProjects\LeetCode\LeetCode\obj\Debug\netcoreapp3.1\LeetCode.csproj.AssemblyReference.cache
+B:\Backup\SideProjects\LeetCode\LeetCode\obj\Debug\netcoreapp3.1\LeetCode.GeneratedMSBuildEditorConfig.editorconfig
+B:\Backup\SideProjects\LeetCode\LeetCode\obj\Debug\netcoreapp3.1\LeetCode.AssemblyInfoInputs.cache
+B:\Backup\SideProjects\LeetCode\LeetCode\obj\Debug\netcoreapp3.1\LeetCode.AssemblyInfo.cs
+B:\Backup\SideProjects\LeetCode\LeetCode\obj\Debug\netcoreapp3.1\LeetCode.csproj.CoreCompileInputs.cache
+B:\Backup\SideProjects\LeetCode\LeetCode\obj\Debug\netcoreapp3.1\LeetCode.dll
+B:\Backup\SideProjects\LeetCode\LeetCode\obj\Debug\netcoreapp3.1\LeetCode.pdb
+B:\Backup\SideProjects\LeetCode\LeetCode\obj\Debug\netcoreapp3.1\LeetCode.genruntimeconfig.cache

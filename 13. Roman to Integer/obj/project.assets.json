@@ -27,19 +27,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\bszha\\.nuget\\packages\\": {}
+    "C:\\Users\\admin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\bszha\\Spengergasse\\LeetCode\\LeetCode\\13. Roman to Integer\\13. Roman to Integer.csproj",
+      "projectUniqueName": "B:\\Backup\\SideProjects\\LeetCode\\13. Roman to Integer\\13. Roman to Integer.csproj",
       "projectName": "13. Roman to Integer",
-      "projectPath": "C:\\Users\\bszha\\Spengergasse\\LeetCode\\LeetCode\\13. Roman to Integer\\13. Roman to Integer.csproj",
-      "packagesPath": "C:\\Users\\bszha\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bszha\\Spengergasse\\LeetCode\\LeetCode\\13. Roman to Integer\\obj\\",
+      "projectPath": "B:\\Backup\\SideProjects\\LeetCode\\13. Roman to Integer\\13. Roman to Integer.csproj",
+      "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+      "outputPath": "B:\\Backup\\SideProjects\\LeetCode\\13. Roman to Integer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\bszha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -53,8 +53,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\bszha\\Spengergasse\\LeetCode\\LeetCode\\LeetCode\\LeetCode.csproj": {
-              "projectPath": "C:\\Users\\bszha\\Spengergasse\\LeetCode\\LeetCode\\LeetCode\\LeetCode.csproj"
+            "B:\\Backup\\SideProjects\\LeetCode\\LeetCode\\LeetCode.csproj": {
+              "projectPath": "B:\\Backup\\SideProjects\\LeetCode\\LeetCode\\LeetCode.csproj"
             }
           }
         }
@@ -83,7 +83,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.412\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }
