@@ -91,7 +91,7 @@ namespace _273._Integer_to_English_Words
         
         static void Main(string[] args)
         {
-            Common.Run(typeof(Solution), NumberToWords, 0);
+            Common.Run(typeof(Solution), NumberToWords, int.MaxValue);
         }
     }
 }
