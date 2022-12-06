@@ -17,6 +17,7 @@ namespace LeetCode
             Console.WriteLine("-----------------");
             Console.WriteLine("Time Elapsed: "+sw.Elapsed.TotalMilliseconds+ "ms");
         }
+        public delegate void Solution<TInput>(TInput input);
         public delegate TOutput Solution<TInput,TOutput>(TInput input);
         public delegate TOutput Solution<TInput1, TInput2,TOutput>(TInput1 input1, TInput2 input2);
         public delegate TOutput Solution<TInput1, TInput2,TInput3,TOutput>(TInput1 input1, TInput2 input2);
@@ -56,6 +57,17 @@ namespace LeetCode
             EndBenchmark();
         }
 
+        static public void Run<TInput>(Type t, Solution<TInput> solution, TInput input)
+        {
+            GetTitle(t);
+            StartBenchmark();
+            Console.WriteLine("Inputs :");
+            Console.WriteLine($"{input}");
+            Console.WriteLine("\nOutput:");
+            Console.WriteLine($"None");
+            EndBenchmark();
+        }
+
         static public void Run<TInput1, TInput2, TInput3, TOutput>(Type t, Solution<TInput1, TInput2, TInput3, TOutput> solution, TInput1 input1, TInput2 input2, TInput3 input3)
         {
             GetTitle(t);
@@ -66,6 +78,8 @@ namespace LeetCode
             Console.WriteLine($"{solution(input1, input2)}");
             EndBenchmark();
         }
+        
+        
 
         private static void GetTitle(Type t)
         {
