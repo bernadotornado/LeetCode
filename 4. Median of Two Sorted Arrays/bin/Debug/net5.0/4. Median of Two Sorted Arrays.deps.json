@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "4. Median of Two Sorted Arrays/1.0.0": {
+        "dependencies": {
+          "LeetCode": "1.0.0"
+        },
+        "runtime": {
+          "4. Median of Two Sorted Arrays.dll": {}
+        }
+      },
+      "LeetCode/1.0.0": {
+        "runtime": {
+          "LeetCode.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "4. Median of Two Sorted Arrays/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LeetCode/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
